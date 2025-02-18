@@ -23,6 +23,16 @@ app.post('/canciones', (req, res) => {
   });
 });
 
+// ... Código previo (POST /canciones) ...
+
+// Endpoint GET para ver información personal
+app.get('/informacion', (req, res) => {
+    res.json({
+      nombre: "Tu Nombre",
+      carnet: "20230000"
+    });
+  });
+
 // Servidor
 const PORT = 3000;
 app.listen(PORT, () => {
