@@ -33,6 +33,24 @@ app.get('/informacion', (req, res) => {
     });
   });
 
+  // Endpoint POST para agregar una canción
+app.post('/canciones', (req, res) => {
+    const { nombre, artista, genero } = req.body; // CAMBIO: antes se recibía album
+    const nuevaCancion = {
+      id: canciones.length + 1,
+      nombre,
+      artista,
+      genero  // CAMBIO: se guarda genero en lugar de album
+    };
+    canciones.push(nuevaCancion);
+  
+    res.status(201).json({
+      mensaje: "Canción creada exitosamente",
+      cancion: nuevaCancion
+    });
+  });
+
+  
 // Servidor
 const PORT = 3000;
 app.listen(PORT, () => {
