@@ -28,8 +28,8 @@ app.post('/canciones', (req, res) => {
 // Endpoint GET para ver información personal
 app.get('/informacion', (req, res) => {
     res.json({
-      nombre: "Tu Nombre",
-      carnet: "20230000"
+      nombre: "Edwin Sandoval",
+      carnet: "202010856"
     });
   });
 
